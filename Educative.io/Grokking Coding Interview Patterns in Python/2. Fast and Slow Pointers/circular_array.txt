@@ -1,0 +1,42 @@
+/*
+
+An input array, nums containing non-zero integers, is given, where the value at each index represents the number of places to skip forward (if the value is positive) or backward (if the value is negative). When skipping forward or backward, wrap around if you reach either end of the array. For this reason, we are calling it a circular array. Determine if this circular array has a cycle. A cycle is a sequence of indices in the circular array characterized by the following:
+1. The same set of indices is repeated when the sequence is traversed in accordance with the aforementioned rules.
+2. The length of the sequence is at least two.
+3. The loop must be in a single direction, forward or backward.
+
+*/
+
+def next_index(current_index, jumps, array_length):
+    next_index = (current_index + jumps)%array_length
+    if next_index < 0:
+        next_index += array_length
+    return next_index
+
+def is_not_cycle(nums, prev_direction, pointer):
+    current_direction = nums[pointer] >= 0
+    if (prev_direction != current_direction) or (abs(nums[pointer] % len(nums)) == 0):
+        return True
+    else:
+        return False
+
+def circular_array_loop(nums):
+    for i in range(len(nums)):
+        slow = fast = i
+        forward = nums[i] > 0
+        while True:
+            slow = next_index(slow, nums[slow], len(nums))
+            if is_not_cycle(nums, forward, slow):
+                break
+
+            fast = next_index(fast, nums[fast], len(nums))
+            if is_not_cycle(nums, forward, fast):
+                break
+
+            fast = next_index(fast, nums[fast], len(nums))
+            if is_not_cycle(nums, forward, fast):
+                break
+
+            if slow == fast:
+                return True
+    return False

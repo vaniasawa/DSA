@@ -1,0 +1,21 @@
+/*
+Given a sentence, reverse the order of its words without affecting the order of letters within a given word.
+*/
+
+def reverse_words(sentence):
+    reversed_sentence = sentence[::-1]
+    reversed_sentence = re.sub(' +', ' ', reversed_sentence.strip())
+
+    reversed_words = ''
+    i, j = 0, 0
+    while (i <= j) and (i < len(sentence)):
+        if reversed_sentence[j] != ' ':
+            j += 1
+        else:
+            reversed_words += reversed_sentence[i:j][::-1] + ' '
+            while reversed_sentence[j] == ' ':
+                j += 1
+            i, j = j, j
+
+    reversed_words += reversed_sentence[i:j][::-1]
+    return reversed_words

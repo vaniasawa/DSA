@@ -1,0 +1,40 @@
+/*
+Write a function that takes a string as input and checks whether it can be a valid palindrome by removing at most one character from it.
+
+input = acbvba
+*/
+
+# 1
+def is_pure_palindrome(s: str) -> bool:
+    left_pointer, right_pointer = 0, len(s)-1
+    while left_pointer <= right_pointer:
+        if s[left_pointer] == s[right_pointer]:
+            left_pointer += 1
+            right_pointer -= 1
+        else:
+            return False
+    return True    
+
+def is_palindrome_2(s: str) -> bool:
+    left_pointer, right_pointer = 0, len(s) - 1
+    while left_pointer <= right_pointer:
+        if s[left_pointer] == s[right_pointer]:
+            left_pointer += 1
+            right_pointer -= 1
+        else:
+            return is_pure_palindrome(s[left_pointer+1: right_pointer+1]) or is_pure_palindrome(s[left_pointer: right_pointer])
+    return True
+
+# 2
+def is_palindrome_2(s: str) -> bool:
+    left_pointer, right_pointer = 0, len(s) - 1
+    while left_pointer <= right_pointer:
+        if s[left_pointer] == s[right_pointer]:
+            left_pointer += 1
+            right_pointer -= 1
+        else:
+            return (
+                (s[left_pointer+1: right_pointer+1] == s[left_pointer+1: right_pointer+1][::-1]) or 
+                (s[left_pointer: right_pointer] == s[left_pointer: right_pointer][::-1])
+            )
+    return True

@@ -1,0 +1,16 @@
+/*
+Write a function that takes a string s, as an input, and determine whether it is a palindrome or not.
+*/
+
+def is_palindrome(s: str) -> bool:
+    if len(s) <= 1:
+        return True
+    s = s.lower()
+    i, j = 0, len(s) - 1
+    while i < j:
+        if s[i] == s[j]:
+            i += 1
+            j -= 1
+        else:
+            return False
+    return True

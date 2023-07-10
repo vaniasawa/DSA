@@ -1,0 +1,10 @@
+/*
+Given the head of a singly linked list, return the middle node of the linked list. If the number of nodes in the linked list is even, there will be two middle nodes, so return the second one.
+*/
+
+def get_middle_node(head):
+    slow_pointer, fast_pointer = head, head
+    while fast_pointer and fast_pointer.next:
+        slow_pointer = slow_pointer.next
+        fast_pointer = fast_pointer.next.next
+    return slow_pointer

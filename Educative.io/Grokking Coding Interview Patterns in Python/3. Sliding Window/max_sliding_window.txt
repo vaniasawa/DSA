@@ -1,0 +1,8 @@
+/*
+def find_max_sliding_window(nums, w):
+    max_list = [0] * (len(nums)-w+1)
+    for i in range(len(nums)-w+1):
+        max_list[i] = max(nums[i:i+w])
+    return max_list
+
+*/

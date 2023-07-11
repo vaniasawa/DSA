@@ -1,0 +1,22 @@
+/*
+Given the head of a linked list, your task is to check whether the linked list is a palindrome or not. Return TRUE if the linked list is a palindrome; otherwise, return FALSE.
+*/
+
+def palindrome(head):
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    if fast:
+        reverse = reverse_linked_list(slow.next)
+    else:
+        reverse = reverse_linked_list(slow)
+    slow = head
+
+    while slow and reverse: # be careful here!
+        if slow.data != reverse.data:
+            return False 
+        slow = slow.next
+        reverse = reverse.next
+    return True
+        

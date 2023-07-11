@@ -1,0 +1,43 @@
+/*
+Given a string, s, that represents a DNA subsequence, and a number k, return all the contiguous subsequences (substrings) of length k that occur more than once in the string.
+*/
+
+## Beginner
+def find_repeated_sequences(s, k):
+    hash_map = set()
+    output = set()
+    for i in range(0, len(s)-k+1):
+        if s[i:i+k] in hash_map:
+            output.add(s[i:i+k])
+        else:
+            hash_map.add(s[i:i+k])
+    return output
+
+## Elite - Rabin Karp Algorithm (Rolling Hash method for contiguous pattern matching)
+def find_repeated_sequences(s, k):
+    n = len(s)
+    mapping = {
+        'A': 1,
+        'C': 2,
+        'G': 3,
+        'T': 4
+    }
+    s_int = [0] * n
+    for i in range(n):
+        s_int[i] = mapping[s[i]]
+    
+    hash_set = set()
+    output = set()
+    hash_val = 0
+    for i in range(0, n-k+1):
+        if i == 0:
+            for c in range(k):
+                hash_val += s_int[i+c] * (n**(k-c-1))
+        else:
+            hash_val = n * (hash_val - s_int[i-1] * (n**(k-1))) + s_int[i+k-1]
+
+        if hash_val not in hash_set:
+            hash_set.add(hash_val)
+        else:
+            output.add(s[i:i+k])
+    return output

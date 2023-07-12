@@ -1,0 +1,20 @@
+from linked_list import LinkedList
+from linked_list_node import LinkedListNode
+
+def remove_nth_last_node(head, n):
+    left = right = head
+    for _ in range(n):
+        right = right.next
+
+    # You HAVE to include this condition - You assumed that right exists, when in fact it might be None.
+    ## Base Case
+    if right == None ## i.e. reach end of list 
+        return head.next
+    
+    while right.next:
+        left = left.next
+        right = right.next
+    # Elem to be removed = left.next
+    chain_to_keep = left.next.next 
+    left.next = chain_to_keep
+    return head 

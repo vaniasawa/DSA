@@ -1,0 +1,41 @@
+/*
+
+*/
+
+def is_below_target_freq(current_map, target_map):
+    for key in target_map.keys():
+        if key in current_map:
+            if current_map[key] > target_map[key]:
+                return False
+    return True
+
+def min_window(s, t):
+    target_hash = {}
+    for char in t:
+        if char in target_hash:
+            target_hash[char] += 1
+        else:
+            target_hash[char] = 1
+    
+    start = 0
+    current_hash = {}
+    min_window_string = s
+    for end in range(len(s)):
+        if s[end] in current_hash:
+            current_hash[s[end]] += 1
+        else:
+            current_hash[s[end]] = 1
+        
+        if is_below_target_freq(current_hash, target_hash):
+            continue
+        else:
+            current_hash[s[start]] -= 1
+            if is_below_target_freq(current_hash, target_hash):
+                start += 1
+            else:
+                current_hash[s[start]] += 1
+        if len(min_window_string) > len(s[start: end+1]):
+            min_window_string = s[start: end+1]
+    return min_window_string
+    
+

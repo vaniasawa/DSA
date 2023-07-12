@@ -1,0 +1,28 @@
+/*
+Given a string, s, of lowercase English characters and an integer, k, return the length of the longest substring after replacing 
+at most k characters with any other lowercase English character so that all the characters in the substring are the same.
+*/
+
+def longest_repeating_character_replacement(s, k):
+    current_hash = {}
+    start = 0
+    length_max_substring = 0
+    string_length = len(s)
+    most_freq_char = 0
+    for end in range(string_length):
+        ## add element to hash map
+        if s[end] in current_hash:
+            current_hash[s[end]] += 1
+        else:
+            current_hash[s[end]] = 1
+        
+        ## check if replacements have exceeded - add 1 to starting pointer
+        most_freq_char = max(most_freq_char, current_hash[s[end]]) # num
+        if (end-start+1)-most_freq_char>k:
+            start+=1
+            current_hash[s[start]] -= 1
+        
+        ## get length of max substring
+        length_max_substring = max(length_max_substring, end-start+1)
+    return length_max_substring
+

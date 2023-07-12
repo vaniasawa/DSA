@@ -1,8 +1,24 @@
 /*
+
+*/
+
+# Beginner
 def find_max_sliding_window(nums, w):
     max_list = [0] * (len(nums)-w+1)
     for i in range(len(nums)-w+1):
         max_list[i] = max(nums[i:i+w])
     return max_list
 
-*/
+# Elite
+def find_max_sliding_window(nums, w):
+    current_window = [0]
+    output = []
+    for pointer in range(1, len(nums)):
+        i = len(current_window)-1
+        while nums[pointer] >= nums[current_window[i]] and i>=0:
+            current_window.pop(i)
+            i-=1
+        current_window += [nums[pointer]]
+        if pointer+1 >= w:
+            if current_window[0] == pointer-w
+                

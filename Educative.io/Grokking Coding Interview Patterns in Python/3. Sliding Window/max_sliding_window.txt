@@ -10,15 +10,24 @@ def find_max_sliding_window(nums, w):
     return max_list
 
 # Elite
+## You can use deque from collections for a double ended queue
+
+from collections import deque
 def find_max_sliding_window(nums, w):
-    current_window = [0]
+    current_window = deque([0])
     output = []
+    if w == 1:
+        return nums
     for pointer in range(1, len(nums)):
-        i = len(current_window)-1
-        while nums[pointer] >= nums[current_window[i]] and i>=0:
-            current_window.pop(i)
-            i-=1
-        current_window += [nums[pointer]]
-        if pointer+1 >= w:
-            if current_window[0] == pointer-w
-                
+        ## Clean Up
+        while (len(current_window) > 0) and (nums[pointer] > nums[current_window[-1]]):
+            current_window.pop()
+        current_window.append(pointer)
+
+        if current_window[0] <= pointer - w:
+            current_window.popleft()
+
+        if pointer + 1 - w >= 0:
+            output.append(nums[current_window[0]])
+
+    return output

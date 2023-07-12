@@ -1,0 +1,23 @@
+/*
+
+*/
+
+def min_window(str1, str2):
+    index_str1 = index_str2 = 0
+    min_subsequence_length = len(str1) + 1
+    min_subsequence = ""
+    start = end = 0
+    while index_str1 < len(str1):
+        for index_str2 in range(len(str2)):
+            while str1[index_str1] != str2[index_str2]:
+                index_str1 += 1
+        start = end = index_str1
+        for index_str2 in range(len(str2)-1, 0, -1):
+            while str1[start] != str2[index_str2]:
+                start -= 1
+        
+        if end-start+1 < min_subsequence_length:
+            min_subsequence_length = end-start+1
+            min_subsequence = str1[start:end+1]
+        index_str1 = start + 1
+    return min_subsequence

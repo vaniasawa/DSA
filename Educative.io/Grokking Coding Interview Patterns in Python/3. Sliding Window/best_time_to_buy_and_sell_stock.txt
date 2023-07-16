@@ -1,0 +1,15 @@
+/*
+Given an array where the element at the index i represents the price of a stock on day i, find the maximum profit that you can gain by buying the stock once and then selling it.
+
+Note: Stock can only be purchased on a single day and sold on a different day. If no profit can be achieved, we return zero.
+*/
+
+def max_profit(stock_prices):
+    maximum_profit = 0
+    buy, sell = 0, 0
+    for sell in range(1, len(stock_prices)):
+        if stock_prices[sell] - stock_prices[buy] <= 0:
+            buy = sell
+        else:
+            maximum_profit = max(maximum_profit, stock_prices[sell] - stock_prices[buy])
+    return maximum_profit

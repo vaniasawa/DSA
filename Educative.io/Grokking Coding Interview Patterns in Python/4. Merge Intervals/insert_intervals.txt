@@ -1,0 +1,22 @@
+from interval import *
+
+def insert_interval(existing_intervals, new_interval):
+    if existing_intervals == []:
+        return []
+    outputs = []
+    i = 0
+    n = len(existing_intervals)
+    while i < n and existing_intervals[pointer].start 
+        current_interval = existing_intervals[pointer]
+        if new_interval.start > current_interval.end:
+            outputs.append(current_interval)
+        else:
+            break
+    while pointer < range(len(existing_intervals)):
+        current_interval = existing_intervals[pointer]
+        if new_interval.end < current_interval.start:
+            existing_intervals.insert(pointer, )
+    
+        
+        
+    

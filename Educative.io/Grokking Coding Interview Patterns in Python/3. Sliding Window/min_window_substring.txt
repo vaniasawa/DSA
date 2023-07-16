@@ -1,5 +1,10 @@
 /*
+We are given two strings, s and t, find the minimum window substring of t in s.
 
+The minimum window substring of t in s is defined as follows:
+- It is the shortest substring of s that includes all of the characters present in t.
+- The frequency of each character in this substring that belongs to t should be equal to or greater than its frequency in t.
+- The order of the characters does not matter here.
 */
 
 def is_below_target_freq(current_map, target_map):
@@ -38,4 +43,41 @@ def min_window(s, t):
             min_window_string = s[start: end+1]
     return min_window_string
     
+def min_window(s, t):
+    if t == "":
+        return ""
+    
+    req_count, window = {}, {}
+    for char in t:
+        window[char] = 0
+        if char not in req_count:
+            req_count[char] = 1
+        else:
+            req_count[char] += 1
+
+    required = len(req_count)
+    current = 0
+    res = [-1, -1]
+    res_len = float('inf')
+    left = 0
+    for right in range(len(s)):
+        character = s[right]
+        if character in t:
+            window[character] += 1
+        if (character in req_count) and (window[character] == req_count[character]):
+            current += 1
+        while current == required:
+            if (right-left+1 )< res_len:
+                res_len = right-left+1
+                res = [left, right]
+
+            if s[left] in t:
+                window[s[left]] -= 1
+
+            if s[left] in req_count and window[s[left]] < req_count[s[left]]:
+                current -= 1
+            left += 1
+    left, right = res
+    return s[left: right+1] if res_len != float('inf') else ""
+
 

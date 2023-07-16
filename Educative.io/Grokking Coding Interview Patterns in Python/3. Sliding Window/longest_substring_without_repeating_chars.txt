@@ -1,0 +1,25 @@
+/*
+Given a string, str, return the length of the longest substring without repeating characters.
+*/
+
+def find_longest_substring(string):
+    ## Base case!
+    if string == '':
+        return 0
+
+    max_substring_len = -1
+    left = 0
+    dict_hash = {}
+    for right in range(len(string)):
+        character = string[right]
+        if character in dict_hash:
+            dict_hash[character] += 1
+        else:
+            dict_hash[character] = 1
+        while dict_hash[character] > 1:
+            ## left is a pointer, not a number!
+            dict_hash[string[left]] -= 1
+            left += 1
+
+        max_substring_len = max(max_substring_len, right-left+1)
+    return max_substring_len 

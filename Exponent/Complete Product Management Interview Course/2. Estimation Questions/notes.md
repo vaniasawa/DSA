@@ -79,9 +79,62 @@ A great answer -
 
 ### 3. Break Down the Problem
 
+For example -
+**Estimating the weight of a school bus**:
+- Establish whether the bus is full of people or empty, full tank or empty tank
+- What are the components of a school bus that you need to take into account?
+    - Metal exterior
+    - Weight of 1 seat * # of seats
+    - Weigth of 4 tyres
+    - Weight of bus engine + engine parts (coolant, diesel tank)
+    - Weight of headlights, driving parts, Mirrors
+
+**Estimating the # of miles of roads in the United States**
+- Assuming we start with the total area of the continental United States -
+    - Calculate road density per square mile
+    - Split by rural/urban, city/suburb/rural square mile etc
 
 ### 4. Estimate
+- Make some assumptions - Do not worry about the actual numbers, just be confident.
+
+**Estimating the weight of a school bus**:
+- Seats - 10 kg * 4 * 10 = 400kg
+- Tyres - 320kg
+    - Car Tyres - 10 kg for 5 people 
+    - Bus Tyre - 80kg
+- External metal - 1m^2 per person * 40 = 40m^2 Base + (1 * 10m^2) + 5m^2 = (55m^2 * 2) + (
 
 ### 5. Final Answer
+- Add in the components of all your findings to get a final output.
 
 ### 4. Tell the Interviewer why you are wrong
+- Your answer is most likely wrong - Give the interviewer a gut check.
+
+## Strategies for answering estimation questions
+
+1. Estimate via Proxy
+    - Do you have another related, known number/quantity?
+    - Can you extrapolate to get the number you want?
+2. Personal Reference 
+    - Anecdotal observation
+3. Upper and Lower Bounds
+    - Realistic upper and lower bound + get average
+    - 
+
+## Math Tricks 
+
+1. Round numbers to some power of 10
+2. Split your multiplications
+3. Be careful when dealing with powers of 10
+
+## Working towards a more competitive answer
+1. Gut Check
+2. Competitor Check
+
+## Rubrics for Estimation Interviews
+1. Problem Solving
+2. Comfort with Numbers
+3. Ability to Identify Possible Errors
+4. Communication
+5. Collaboration
+6. Creativity

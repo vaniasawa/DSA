@@ -41,3 +41,6 @@ def find_repeated_sequences(s, k):
         else:
             output.add(s[i:i+k])
     return output
+
+def find_repeated_sequences(s, k):
+    

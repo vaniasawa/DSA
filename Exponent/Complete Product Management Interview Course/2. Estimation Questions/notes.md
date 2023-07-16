@@ -132,9 +132,9 @@ For example -
 2. Competitor Check
 
 ## Rubrics for Estimation Interviews
-1. Problem Solving
-2. Comfort with Numbers
-3. Ability to Identify Possible Errors
-4. Communication
-5. Collaboration
-6. Creativity
+1. Problem Solving - Asking insightful questions, setting up an easy calcultion and an accurate answer
+2. Comfort with Numbers - Above average ease in using numbers to an advantage, creative use of approximations, rules of thumb etc
+3. Ability to Identify Possible Errors - Covered thoroughly, alternatives were offered, pros/cons neatly summarised
+4. Communication - Clear and Proactive. Anticipated questions, articulated reasons for decision, checked-in throughout.
+5. Collaboration - Take lead, but make use of the interviewer.
+6. Creativity - Creative and out of the box thinking on display - logic maintained, novel solutions found.

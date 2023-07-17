@@ -1,0 +1,13 @@
+# Estimate Google Play Store Revenue
+
+Hypotheses -
+- The problem statement aims to calculate the net revenue $ made by the Google Play Store in a single year.
+- We will need to estimate the following -
+    1. Assume Alphabet's total revenue > Make assumptions about the Play Store revenue
+    2. Revenue streams for Alphabet -
+        - In-app purchases (one-time) [Commissions made by Google]
+        - Subscriptions for apps [Commissions made by Google]
+        - Ad placements [Cost per Click Rate]
+
+1. Alphabet's Revenue Stream - $300B dollars
+    - Play Store - 

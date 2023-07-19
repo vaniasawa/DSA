@@ -67,7 +67,7 @@
 - Consider PVR looking at Suspense category
 - Algorithm collects Evidence to support the presentation of a row - Previously watched suspense movies by the user, predicted star rating, synopsis, awards, cast, other metadata, thumbnail image
 
-### Page Generation Process
+#### Page Generation Process
 - Which rows to display for a user, based on the 10K ranked rows created for a user?
 - Originally - template based approach, based on specific rules
     - Hardware capabilities
@@ -76,11 +76,24 @@
     - What the user has already watched in previous sessions and wants to resume
     - Fresh content based on trends in the geo
 
-#### Row-Based approach
+##### Row-Based approach
+- Use existing recommendations or learning-to-rank approaches to score each row and rank them based on those scores
+- Reltively fast, lacks diversity - Multiple rows with similar user interests
 
-#### Stage-Wise approach
+##### Stage-Wise approach
+- Greedy row-wise apporach - Consider the rows selected sequentially from the first. The next rows are recomputed taking into accounts its relationship to both the previous row, as well as the previous item already chosen for the page.
 
-#### Machine Learning approach
+##### Machine Learning approach
+- Page-level metrics: Precision@m-by-n, Recally@m-by-n (Adaptations of Precision@K and Recall@K in 2D)
 
+### Cold-start, Deployment, and Big Data
 
+#### Cold-Start Problem
+- Obtain some user-preference information by asking members to fill up a survey and "jump start" the recommendations
+- Netflix Party - Netflix could create a graph of who you have interacted with, and do collaborative filtering like algorithm to do recommendations to new users as well
 
+#### A/B Testing
+- Incredible and efficient A/B Testing - There is no guarantee that your offline model will perform well on the actual user experience (i.e. total watch time)
+- How to select the control and test group? How to determine if an A/B test is statistically significant? How to choose a control/test group size? What metrics to use in A/B testing?
+
+Offline Evaluation - When to throw models into the A/B Test? Which models to A/B Test?

@@ -1,0 +1,22 @@
+/*
+We’re given a character array, tasks, where each character represents a unique task. These tasks need to be performed by a single CPU, with each task taking one unit of time. The tasks can be performed in any order. At any given time, a CPU can either perform some task or stay idle.
+For the given tasks, we are also provided with a positive integer value, n, which represents the cooling period between any two identical tasks. This means that the CPU must wait for at least n units of time before it performs the same task again. For example, if we have the tasks [A,B,A,C] and n = 2, then after performing the first A task, the CPU will wait for at least 2 units of time to perform the second A task. During these 2 units of time, the CPU can either perform some other task or stay idle.
+Given the two input values, tasks and n, find the least number of units of time the CPU will take to perform the given tasks.
+*/
+
+def least_time(tasks, n):
+    hash_map = {}
+    for task in tasks:
+        if task not in hash_map:
+            hash_map[task] = 1
+        else:
+            hash_map[task] += 1
+    hash_map = dict(sorted(hash_map.items(), key = lambda x: x[1]))
+    max_freq = hash_map.popitem()[1]
+    idle_time = (max_freq - 1) * n
+
+    while hash_map and (idle_time > 0):
+        idle_time -= min(max_freq-1, hash_map.popitem()[1])
+    idle_time = max(idle_time, 0)
+
+    return len(tasks) + idle_time

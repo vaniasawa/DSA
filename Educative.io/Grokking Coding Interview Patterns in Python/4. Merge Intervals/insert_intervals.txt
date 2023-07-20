@@ -1,21 +1,60 @@
+/*
+Given a sorted list of nonoverlapping intervals and a new interval, your task is to insert the new interval into the correct position while ensuring that the 
+resulting list of intervals remains sorted and nonoverlapping. Each interval is a pair of nonnegative numbers, the first being the start time and the second 
+being the end time of the interval.
+
+existing_intervals = [[1, 2], [3, 4], [5, 8], [9, 15]]
+new_interval = [2, 5]
+
+outputs = []
+n = 4
+
+i = 0
+outputs = [[1, 2]], i = 1
+
+outputs[-1].end = 2 < 2? False
+outputs = [[1, 5]]
+
+i = 1
+outputs = [[1, 5]]
+
+i = 2
+outputs = [[1, 8]]
+
+i = 3
+outputs = [[1, 8], [9, 15]]
+
+1. 
+*/
+
 from interval import *
 
 def insert_interval(existing_intervals, new_interval):
     if existing_intervals == []:
         return []
+
     outputs = []
     i = 0
     n = len(existing_intervals)
-    while i < n and existing_intervals[pointer].start 
-        current_interval = existing_intervals[pointer]
-        if new_interval.start > current_interval.end:
-            outputs.append(current_interval)
+
+    while i < n and existing_intervals[i].start < new_interval.start:
+        outputs.append(existing_intervals[i])
+        i += 1
+
+    if not outputs or outputs[-1].end < new_interval.start:
+        outputs.append(new_interval)
+    else:
+        outputs[-1].end = max(outputs[-1].end, new_interval.end)
+    
+    while i<n:
+        ei = existing_intervals[i]
+        if outputs[-1].end < ei.start:
+            outputs.append(ei)
         else:
-            break
-    while pointer < range(len(existing_intervals)):
-        current_interval = existing_intervals[pointer]
-        if new_interval.end < current_interval.start:
-            existing_intervals.insert(pointer, )
+            outputs[-1].end = max(outputs[-1].end, ei.end)
+        i+= 1
+    
+    return output
     
         
         

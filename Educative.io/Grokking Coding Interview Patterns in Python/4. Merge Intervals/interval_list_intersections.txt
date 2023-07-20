@@ -1,0 +1,60 @@
+/*
+For two lists of closed intervals given as input, interval_list_a and interval_list_b, where each interval has its own start and end time, write a function that returns the intersection of the two interval lists.
+
+For example, the intersection of [3,8] and [5,10] is [5,8]
+
+First list = [[2, 6], [7, 9], [10, 13], [14, 19], [20, 24]]
+Second list = [[1, 4], [6, 8], [15, 18]]
+
+first = [2, 6], second = [1, 4]
+
+2 <= 4? Yes, 1 <= 6? Yes
+
+[2, 4]
+
+first = [2, 6], second = [6, 8]
+
+2 <= 8? Yes, 6<= 6? Yes
+
+[6, 6]
+
+second = [6, 8], first  = [7, 9]
+
+6 <= 9? Yes, 7 <= 8? Yes 
+
+[7, 8]
+
+first = [7, 9], second = [15, 18]
+
+7 <= 18? Yes, 15 <= 9? No
+
+first = [10, 13], second = [15, 18]
+
+first = [14, 19], second = [15, 18]
+
+14 <= 15? Yes 18 <= 19? No
+
+[15, 18]
+
+*/
+
+from interval import Interval
+
+def intervals_intersection(interval_list_a, interval_list_b):
+    pointer_a = pointer_b = 0
+    len_a = len(interval_list_a)
+    len_b = len(interval_list_b)
+    intersection = []
+    while (pointer_a < len_a) and (pointer_b < len_b): # It's both!
+        first = interval_list_a[pointer_a]
+        second = interval_list_b[pointer_b]
+        if (first.start <= second.end) and (second.start <= first.end):
+            intersection.append(Interval(start = max(first.start, second.start), end = (min(first.end, second.end))))
+        elif (second.start <= first.end) and (first.start <= second.end):
+            intersection.append(Interval(start = max(first.start, second.start), end = (min(first.end, second.end))))
+        
+        if first.end <= second.end:
+            pointer_a += 1
+        else:
+            pointer_b += 1
+    return intersection

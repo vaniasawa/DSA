@@ -1,13 +1,46 @@
 # Estimate Google Play Store Revenue
 
+Q. How much money does the Google Play Store make in a year?
+
+- Global Revenue
+- Before paying out to developers
+
+# purchases on play store * price/purchase 
+
+# users * # purchases/users * price/purchase [*12 for the entire year]
+
+Gut check - 
+$300B - Google
+80% from revenue (ads)
+
+4B smartphones, 75% market share - 3B play store 
+
+# users * $spent/user [*12 for the entire year]
+-----
+$spent/user 
+
+$0 - 0.7
+$1 - 0.2
+$5 - 0.05
+$10 - 0.05
+
+3B * $(0 + 0.2 + 0.25 + 0.5)
+= 3B * $0.9
+= $2.7B
+
 Hypotheses -
 - The problem statement aims to calculate the net revenue $ made by the Google Play Store in a single year.
 - We will need to estimate the following -
-    1. Assume Alphabet's total revenue > Make assumptions about the Play Store revenue
+    1. [Gut Check] Assume Alphabet's total revenue > Make assumptions about the Play Store revenue
     2. Revenue streams for Alphabet -
         - In-app purchases (one-time) [Commissions made by Google]
         - Subscriptions for apps [Commissions made by Google]
-        - Ad placements [Cost per Click Rate]
 
-1. Alphabet's Revenue Stream - $300B dollars
-    - Play Store - 
+1. Alphabet's Annual, Global Revenue Stream - $300B
+    - Play Store - Approximately 15%
+    - Net Revenue - $45B 
+
+2. Let's consider Revenue Streams - 
+    - 80% downloads are free apps with in-app purchases (Split between users spending various amounts)
+    - 20% downloads are subscription models without in-app purchases (Split between users spending various amounts)
+    - Split up similar to approach above by Google PM.

@@ -1,35 +1,31 @@
-# Estimate Self-Driving Cars in the United States
+# What is Airbnb's annual yearly revenue? Consider Core Service only
 
-How many self-driving cars does it take to map the entire continental U.S. in one year?
-Imaging you’re a Google Maps PM, working on re-mapping the continental US for Google Street View using self-driving cars. How many self-driving cars do we need to re-map the entire continental US in one year?
+You could approach 
 
-Hypotheses:
-- The problem statement aims to calculate the # of self driving cars to map the continental US landmass in one year.
-- We need to estimate -
-    - The length of road that needs to be mapped by the self driving car 
-    - Make assumptions about the self-driving car, including #hours of operation, avg speed, downtime
-    - Estimate the distance travelled by a single car in a year, and hence determine the total cars we will need.
+Assumptions - 
+1. Global Revenue - US potentially makes up 80%, Rest 20%$
+2. Are we looking at calculating the net revenue from users only, or after paying out to the hosts?
+    - Let's assume after pay-out to hosts.
+    - Commission rate - 10% (AirBnb keeps 20% of net user revenue)
+    - AirBNB commission = 0.2 * Annual net revenue from users
 
+Gut Check - 
+1. 5B revenue
+2. Assuming 80% from core services - $4B revenue
 
-Assumptions:
-- Continental USA land area - 3 million square miles
-- Avg speed of a self-driving car - 30 mph speed limit on urban roads, 70 mph on highways - 50mph 
+Revenue Stream - 
+- Renting out accommodations to users.
 
-1. Length of road that needs to be mapped by the self driving car?
-- Rural - 1 square mile - 2 miles of roads, 95% of the 3 million square miles
-- Urban - 1 square mile - 6 miles of roads, 5% of the 3 million square miles
+American Revenue -
+# households * # airbnb reservations/household * $price/reservation * 12 months
 
-2miles of roads/1 square mile * 3 million square miles * 0.95 = 6 millions miles of road * (1 - 0.05) = 5.7 million miles of road
-6 miles of roads/1 square miles * 3 million square miles * 0.05 = 18 million miles of road * 0.05 = 0.9 million miles of road 
-Total miles of road = 6.6 million miles of road ~ 7 million miles of road
+100M household, 15 vacations days per year 
+- AirBNB has a 20% market share in the hospitality industry ie 20M households use AirBNB
+- 20M * 15 = 300M bookings annually
+Average price per night - 100$
+- 30B net revenue
 
-2. Self driving car 
-- 50 mph at any given point in time
-- 20 hours a day, 4 hour down time, 30 days a month, 12 months a year
-- 50 mph * 20 hours * 30 days * 12
-= 1000 miles * 360
-= 360K miles a year
-~ 400 thousand miles/year 
+Commissions - 10% => 3B revenue for AirBNB
 
-3. 7,000K miles of road to be covered/400K covered by one car = 17.5 cars ~ 18 cars 
-
+American -> Global Revenue Extrapolation:
+American: 3B (80% of revenue) => Globally: $3.8B

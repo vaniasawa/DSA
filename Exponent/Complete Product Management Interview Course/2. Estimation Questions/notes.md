@@ -27,8 +27,8 @@ A great answer -
 - World Population - 8B, 200 countries, 70 years life expectancy, $10000 median household income
 - NYC population - 10M
 - California population - 40M
-- UK population - 70M, 30M households
-- London population ~ 10M
+- UK population - 70M, 30M households, 100K square miles of land mass 
+- London population ~ 10M, 600 square miles
 
 **Technical**
 - Amazon S3 Standard Cost - $0.023/GB/month

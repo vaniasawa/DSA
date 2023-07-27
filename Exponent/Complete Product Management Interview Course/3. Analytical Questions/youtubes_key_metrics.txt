@@ -1,0 +1,29 @@
+# Pick Youtube's Key Metrics
+
+You’re the PM of YouTube’s Analytics. What would you pick as the three key metrics, and why?
+
+My learning 
+- Be specific. Determine the webpage you are starting off from, and build from there.
+- Do NOT keep it vague - Be as specific as you want. Not feature_list - Rather, be specific.
+
+Hypotheses - What are the goals of the Youtube platform?
+- Provide entertaining and educational video content to users.
+- Revenue streams -
+    - Free tier - Ads Revenue
+    - Premium tier - Subscription model, ads-free
+- Goals - User Retention, User Engagement, Increased # of videos uploaded
+
+What actions can users to take to achieve Youtube's goals?
+- Likes/Comments on videos
+- Watch time
+- Subscription
+
+Metrics -
+- Avg # likes clicked by a user
+- Avg video watch time per user
+- Avg # comments per user
+
+Pitfalls -
+- Avg # of comments per user - sentiment analysis to determine positive/negative comments
+- Avg video watch time - Can indicate users addicted to a video
+- Avg # likes clicked by a user - Determine positive vs negative likes.

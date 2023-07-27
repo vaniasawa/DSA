@@ -26,9 +26,11 @@ A great answer -
 - US Population - 300M, 100M household, 3 people/household (average), 3M square miles size of land mass, 80 years life expectancy, $70,000 median household income
 - World Population - 8B, 200 countries, 70 years life expectancy, $10000 median household income
 - NYC population - 10M
-- California population - 40M
+- California population - 40M, San Francisco - 1M population, 7 miles by 7 miles
 - UK population - 70M, 30M households, 100K square miles of land mass 
 - London population ~ 10M, 600 square miles
+- UK City Population - 1M Birmingham, 0.5M for Leceister, etc
+- European City Population - Amsterdam 1M, Paris 2M, Berlin 4M
 
 **Technical**
 - Amazon S3 Standard Cost - $0.023/GB/month

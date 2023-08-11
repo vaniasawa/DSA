@@ -1,0 +1,10 @@
+def detect_cycle(head):
+    ## Make sure that the value of slow and fast are different if you are planning on including the condition in the while statement itself!
+    slow = head 
+    fast = head.next
+    while (slow != fast) and fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next 
+    if slow == fast:
+        return True
+    return False 

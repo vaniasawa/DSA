@@ -2,7 +2,11 @@
 
 Use the two pointers to iterate over an array or list, until the conditions of the problem are satisfied.
 
-**Requirement:** Find 2 data elements in an array that satisfy a certain condition, then this pattern should first come up in your mind.
+**Type of question:** Find 2 data elements in an array that satisfy a certain condition (You can iterate in one or both directions)
+
+1. Reverse a word
+2. Check if the word is a palindrome
+3. Find two elements in the array resulting in the target sum value.
 
 ## Does my Problem Match this Pattern?
 

@@ -1,0 +1,16 @@
+def sum_of_squares(n: int) -> int:
+    sum_ = 0
+    str_n = str(n)
+    for i in range(len(str_n)):
+        sum_ += int(str_n[i])**2
+    return sum_
+
+def is_happy_number(n: int) -> bool:
+    slow = fast = n
+    while True:
+        slow = sum_of_squares(slow) # Need to check what you are applying the function to! MUST BE TO THE SLOW POINTER HAHA
+        fast = sum_of_squares(sum_of_squares(fast)) # Same!!
+        if fast == 1:
+            return True
+        if slow == fast:
+            return False

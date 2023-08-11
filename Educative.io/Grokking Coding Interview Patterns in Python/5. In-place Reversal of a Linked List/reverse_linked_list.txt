@@ -1,0 +1,14 @@
+/*
+Given the head of a singly linked list, reverse the linked list and return its updated head.
+*/
+
+def reverse_linked_list(head):
+    prev = next = None
+    curr = head
+    while curr and curr.next:
+        next = curr.next 
+        curr.next = prev 
+        prev = curr 
+        curr = next 
+    head = prev 
+    return head 

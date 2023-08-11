@@ -1,0 +1,30 @@
+/*
+Write a function that takes a string, s, as an input and determines whether or not it is a palindrome.
+
+Constraints -
+1≤ s.length <= 2 * 10**5
+
+s = abcba
+Output = True 
+
+left, right = 0, 4
+left < right? True 
+s[0] != s[4]? False 
+left = 1, right = 3
+left < right? True 
+s[1] != s[3]? False 
+left = 2, right = 2
+
+Is palindrome => True
+
+*/
+
+def is_palindrome(s: str) -> bool:
+    left, right = 0, len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+

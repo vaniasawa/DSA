@@ -1,9 +1,11 @@
 # Fast and Slow Pointers
 
 Use to traverse an iterable data structure at different speeds.
-Determine data structure traits, not the values in the data structure itself, using indices in arrays or node pointers in linked lists. 
-- Detect cycles in a data structure
+Determine data structure traits, not the values in the data structure itself, using **indices in arrays** or **node pointers in linked lists**. 
+- Detect cycles in a data structure (Floyd's Cycle Detection Algorithm)
 - Delete nth node from the end of the list
+
+Slow pointer moves by a factor of 1, and Fast pointer moves by a factor of 2.
 
 ## Does my Problem Match this Pattern?
 

@@ -1,0 +1,19 @@
+/*
+Given an array of integers, nums, and an integer value, target, determine if there are any three integers 
+in nums whose sum is equal to the target, that is, nums[i] + nums[j] + nums[k] == target. Return TRUE if 
+three such integers exist in the array. Otherwise, return FALSE.
+*/
+
+def find_sum_of_three(nums, target):
+    nums = sorted(nums)
+    for i in range(len(nums)):
+        first = nums[i]
+        low, high = i+1, len(nums) - 1
+        while low < high:
+            if (nums[low] + nums[high]) == (target - first):
+                return True
+            elif (nums[low] + nums[high]) > (target - first):
+                high -= 1
+            else:
+                low += 1
+    return False 

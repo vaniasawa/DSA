@@ -1,0 +1,13 @@
+def reverse_words(sentence):
+    reversed_sentence = sentence[::-1]
+    reversed_words = ''
+    left, right = 0, 0
+    while (left <= right) and (right < len(reversed_sentence)):
+        if reversed_sentence[right] != ' ':
+            right += 1
+        else:
+            reverse_words = reversed_sentence[left: right][::-1] + ' '
+            while reversed_sentence[right] == ' ':
+                right += 1
+            left, right = right, right
+    reversed_words += reversed_sentence[left: right][::-1]

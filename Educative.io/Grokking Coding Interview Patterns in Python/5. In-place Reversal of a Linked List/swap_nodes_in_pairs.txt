@@ -1,0 +1,9 @@
+from linked_list_node import *
+from linked_list import *
+
+def swap_pairs(head):
+    first = head
+    while first and first.next:
+        first.data, first.next.data = first.next.data, first.data
+        first = first.next.next
+    return head

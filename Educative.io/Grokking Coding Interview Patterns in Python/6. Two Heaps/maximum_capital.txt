@@ -1,0 +1,29 @@
+from heapq import *
+from min_heap import *
+from max_heap import *
+
+def maximum_capital(c, k, capitals, profits):
+    ## k is the number of projects we need to select
+    ## c is the initial capital available for deployment
+
+    current_capital = c
+    capitals_min_heap = []
+    profits_max_heap = []
+
+    # O(n log n)
+    for i, cap in enumerate(capitals):
+        heappush(capitals_min_heap, (cap, i))
+
+    # O(k log n)
+    for _ in range(k):
+        while capitals_min_heap and capitals_min_heap[0][0] <= current_capital:
+            cap, i = heappop(capitals_min_heap) # O(1)
+            heappush(profits_max_heap, (-profits[i], i)) # O(log n)
+
+        if not profits_max_heap:
+            break
+
+        max_profit = -1 * heappop(profits_max_heap)[0] O(1)
+        current_capital = current_capital + max_profit
+
+    return current_capital

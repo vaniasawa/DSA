@@ -1,0 +1,54 @@
+from linked_list import LinkedList
+from linked_list_node import LinkedListNode
+            
+def reorder_list(head):
+    ## Pointer for the first half of the node
+    left = head
+
+    ## Pointer to reverse the second half of the node
+    curr = head
+
+    ## Get the length of the linked list (O(n))
+    pointer = head
+    ll_length = 1
+    while pointer:
+        pointer = pointer.next
+        ll_length += 1
+    
+    # lpn_index is the index of the linked list where the lpn is located. lpn_index + 1 is where you want to start reversing the linked list.
+    # O(1)
+    lpn_index = ll_length//2
+    if ll_length % 2 == 1:
+        lpn_index += 1
+    
+    # O(n/2) ~ O(n)
+    lpn = None
+    for _ in range(lpn_index):
+        lpn = curr 
+        curr = curr.next
+    
+    # Now reverse the array starting from curr
+    prev = None
+    next = None
+
+    O(n/2) = O(n)
+    while curr:
+        next = curr.next 
+        curr.next = prev 
+        prev = curr
+        curr = next 
+    
+    lpn.next = None 
+
+    O(n)
+    while left and prev:
+        left_node = left 
+        left = left.next 
+
+        prev_node = prev 
+        prev = prev.next
+        left_node.next = prev_node
+        prev_node.next = left 
+    return head 
+
+Total = O(4n) = O(n)

@@ -1,0 +1,30 @@
+
+def reverse_between(head, left, right):
+  left_pointer = None
+  curr = head
+
+  ## Get till the left node
+  for _ in range(left - 1):
+      left_pointer = curr 
+      curr = curr.next
+
+  ## Reverse from left to right node
+  prev = next_pointer = None
+  for _ in range(left, right+1):
+      next_pointer = curr.next
+      curr.next = prev 
+      prev = curr
+      curr = next_pointer 
+  
+  ## fix start and ends
+  if left_pointer == None:
+    temp = prev
+    while temp and temp.next:
+      temp = temp.next
+    temp.next = curr
+    return prev
+  else:
+    last_reversed_node = left_pointer.next
+    last_reversed_node.next = curr 
+    left_pointer.next = prev 
+    return head

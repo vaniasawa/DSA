@@ -1,0 +1,26 @@
+/*
+Given a set of n number of tasks, implement a task scheduler method, tasks(), to run in O(n logn) time that finds the minimum number of machines required to complete these 
+n tasks.
+*/
+
+## The two min-heaps used here are : (Hence, no * -1 required)
+## 1. Heap 1 used to store the minimum start time associated with the tasks
+## 2. Heap 2 used to store earliest/min time when the machine becomes available
+
+import heapq
+def tasks(tasks_list):
+    optimal_machines = 0
+    heapq.heapify(tasks_list)
+    machine_available = []
+    
+    while tasks_list:
+        task = heapq.heappop(tasks_list)
+        if machine_available and task[0] >= machine_available[0][0]:
+            machine_in_use = heapq.heappop(machine_available)
+            machine_in_use = (task[1], machine_in_use[1])
+        else:
+            optimal_machines += 1
+            machine_in_use = (task[1], optimal_machines)
+
+        heapq.heappush(machine_available, machine_in_use)
+    return optimal_machines

@@ -1,0 +1,32 @@
+/*
+Given two sorted integer arrays, nums1 and nums2, and the number of data elements in each array, m and n, implement a function that merges the second array into the first one. You have to modify 
+nums1 in place.
+*/
+
+from traversal import *
+
+
+def merge_sorted(nums1, m, nums2, n):
+    p1 = m - 1
+    p2 = n - 1
+    p = m + n - 1
+    while (p1 >= 0) and (p2 >= 0):
+        if nums1[p1] > nums2[p2]:
+            nums1[p] = nums1[p1]
+            p1 -= 1
+        else:
+            nums1[p] = nums2[p2] 
+            p2 -= 1
+        p -= 1
+
+    while p1 >= 0:
+        nums1[p] = nums1[p1]
+        p1 -= 1
+        p -= 1
+    
+    while p2 >= 0:
+        nums1[p] = nums2[p2]
+        p2 -= 1
+        p -= 1
+        
+    return nums1 
